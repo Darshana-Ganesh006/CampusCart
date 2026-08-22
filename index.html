@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusCart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===============================
+         HEADER
+    =============================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            🛒 CampusCart
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+
+            <!-- DARK MODE -->
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+            <!-- CART -->
+            <div class="cart">
+                🛒 Cart: <span id="cartCount">0</span>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ===============================
+         HERO
+    =============================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                STUDENT SHOPPING
+            </span>
+
+            <h1>
+                Student Essentials
+            </h1>
+
+            <p>
+                Everything you need for your campus life.
+            </p>
+
+            <a href="#products" class="shop-btn">
+                Explore Products
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         PRODUCTS SECTION
+    =============================== -->
+
+    <section class="products-section" id="products">
+
+        <div class="section-heading">
+
+            <span>
+                CAMPUSCART COLLECTION
+            </span>
+
+            <h2>
+                Our Products
+            </h2>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search for products..."
+            >
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter-btn active"
+                data-category="all">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="stationery">
+                Stationery
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="electronics">
+                Electronics
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="bags">
+                Bags
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="accessories">
+                Accessories
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT COUNT -->
+
+        <div
+            class="product-count"
+            id="productCount">
+            Showing 8 products
+        </div>
+
+
+        <!-- SORT -->
+
+        <div class="sort-container">
+
+            <label for="sortSelect">
+                Sort by:
+            </label>
+
+            <select id="sortSelect">
+
+                <option value="default">
+                    Default
+                </option>
+
+                <option value="price-low">
+                    Price: Low to High
+                </option>
+
+                <option value="price-high">
+                    Price: High to Low
+                </option>
+
+                <option value="name-az">
+                    Name: A-Z
+                </option>
+
+                <option value="name-za">
+                    Name: Z-A
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- PRODUCT GALLERY -->
+
+        <div
+            class="product-gallery"
+            id="productGallery">
+
+
+            <!-- 1. NOTEBOOK -->
+
+            <div
+                class="product-card"
+                data-category="stationery"
+                data-name="Notebook"
+                data-price="80">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 1.png"
+                        alt="Notebook">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Notebook
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹80
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2. PEN -->
+
+            <div
+                class="product-card"
+                data-category="stationery"
+                data-name="Pen"
+                data-price="50">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 2.png"
+                        alt="Pen">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Pen
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹50
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3. MOUSE -->
+
+            <div
+                class="product-card"
+                data-category="electronics"
+                data-name="Mouse"
+                data-price="399">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 3.png"
+                        alt="Wireless Mouse">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Wireless Mouse
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹399
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4. USB -->
+
+            <div
+                class="product-card"
+                data-category="electronics"
+                data-name="USB"
+                data-price="299">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 4.png"
+                        alt="USB Drive">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        USB Drive
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹299
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5. BAG -->
+
+            <div
+                class="product-card"
+                data-category="bags"
+                data-name="Bag"
+                data-price="699">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 5.png"
+                        alt="College Backpack">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        College Backpack
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹699
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6. LAMP -->
+
+            <div
+                class="product-card"
+                data-category="accessories"
+                data-name="Lamp"
+                data-price="499">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 6.png"
+                        alt="Study Lamp">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Study Lamp
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹499
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 7. BOTTLE -->
+
+            <div
+                class="product-card"
+                data-category="accessories"
+                data-name="Bottle"
+                data-price="249">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 7.png"
+                        alt="Water Bottle">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Water Bottle
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹249
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 8. UMBRELLA -->
+
+            <div
+                class="product-card"
+                data-category="accessories"
+                data-name="Umbrella"
+                data-price="299">
+
+                <div class="image-container">
+
+                    <img
+                        src="images/Generated image 8.png"
+                        alt="Umbrella">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Umbrella
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            ₹299
+                        </span>
+
+                        <button
+                            class="buy-btn"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div
+            class="no-results"
+            id="noResults">
+
+            <h3>
+                😕 No products found
+            </h3>
+
+            <p>
+                Try searching for another product.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         CORE FEATURE
+    =============================== -->
+
+    <section class="core-feature">
+
+        <div class="core-content">
+
+            <span class="feature-label">
+                SMART SHOPPING
+            </span>
+
+            <h2>
+                Built for Students
+            </h2>
+
+            <p>
+                CampusCart makes it easy to discover,
+                search and filter essential products
+                for everyday student life.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         ABOUT
+    =============================== -->
+
+    <section class="about" id="about">
+
+        <span>
+            ABOUT CAMPUSCART
+        </span>
+
+        <h2>
+            Simple. Useful. Student-Friendly.
+        </h2>
+
+        <p>
+            CampusCart is an interactive product gallery
+            designed to help students quickly find
+            essential products for campus life.
+        </p>
+
+    </section>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CampusCart | Made for Students 🎓
+        </p>
+
+    </footer>
+
+
+    <!-- PRODUCT DETAILS POPUP -->
+
+    <div
+        id="productModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal">
+                ×
+            </button>
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Product">
+
+            <div class="modal-info">
+
+                <h2 id="modalName">
+                    Product
+                </h2>
+
+                <p id="modalDescription">
+                    Product details
+                </p>
+
+                <p
+                    id="modalPrice"
+                    class="modal-price">
+                    ₹0
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
